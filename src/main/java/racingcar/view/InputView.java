@@ -18,4 +18,19 @@ public class InputView {
     }
 
 
+    public static int inputNumber(){
+        while (true){
+            try{
+                System.out.println("시도할 회수는 몇회인가요?");
+                int inputNumber = Integer.parseInt(Console.readLine());
+                return inputNumber;
+            }catch (IllegalArgumentException e){
+                OutputView.printError(e.getMessage());
+            }
+        }
+    }
+
+
+
+
 }
