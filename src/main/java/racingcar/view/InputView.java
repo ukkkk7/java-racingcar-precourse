@@ -22,8 +22,8 @@ public class InputView {
         while (true){
             try{
                 System.out.println("시도할 회수는 몇회인가요?");
-                int inputNumber = Integer.parseInt(Console.readLine());
-                return inputNumber;
+                String inputNumber = Console.readLine();
+                return Integer.parseInt(inputNumber);
             }catch (IllegalArgumentException e){
                 OutputView.printError(e.getMessage());
             }
