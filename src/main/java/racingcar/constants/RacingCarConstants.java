@@ -1,2 +1,7 @@
-package racingcar.constants;public class RacingCarConstants {
+package racingcar.constants;
+
+public class RacingCarConstants {
+
+
+    private RacingCarConstants(){}
 }

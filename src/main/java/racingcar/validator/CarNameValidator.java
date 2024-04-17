@@ -1,2 +1,4 @@
-package racingcar.validator;public class CarNameValidator {
+package racingcar.validator;
+
+public class CarNameValidator {
 }

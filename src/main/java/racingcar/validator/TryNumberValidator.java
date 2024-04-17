@@ -1,4 +1,4 @@
 package racingcar.validator;
 
-public class InputNumberValidator {
+public class TryNumberValidator {
 }

@@ -1,2 +1,4 @@
-package racingcar.model;public class RacingCar {
+package racingcar.model;
+
+public class RacingCar {
 }
