@@ -8,20 +8,39 @@ import java.util.List;
 
 public class RacingGameService {
 
-    public void gameStart(){
-        String[] carNames = InputView.inputCarNames();
+    private Car car;
+    private RacingCars racingCars;
+    private String[] carNames;
+
+    public void start(){
+        carNames = InputView.inputCarNames();
         int inputNumber = InputView.inputNumber();
+        makeCars(carNames);
 
         for (int i = 0; i < inputNumber; i++) {
-            for (String carName : carNames) {
-                Car car = new Car(carName);
-                OutputView.printCarName(carName);
-                OutputView.printCarPosition(car.moveCar());
+                racingCars.moveRacingCars();
+                for (Car car : racingCars.getRacingCars()) {
+                OutputView.printCarName(car.getName());
+                OutputView.printCarPosition(car.getPosition());
                 OutputView.printNextLine();
             }
+            OutputView.printNextLine();
         }
+        List<String> winners = racingCars.getWinnerNames(racingCars.getMaxdistance());
+        OutputView.printWinner(winners);
 
     }
+
+    public void makeCars(String[] carNames){
+        List<Car> cars = new ArrayList<>();
+        for (String car : carNames) {
+            Car temporaryCar = new Car(car);
+            cars.add(temporaryCar);
+        }
+        racingCars = new RacingCars(cars);
+    }
+
+
 
 
 }
