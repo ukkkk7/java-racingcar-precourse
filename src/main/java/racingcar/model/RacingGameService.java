@@ -1,6 +1,7 @@
 package racingcar.model;
 
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,9 @@ public class RacingGameService {
         for (int i = 0; i < inputNumber; i++) {
             for (String carName : carNames) {
                 Car car = new Car(carName);
-                car.moveCar();
+                OutputView.printCarName(carName);
+                OutputView.printCarPosition(car.moveCar());
+                OutputView.printNextLine();
             }
         }
 

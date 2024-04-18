@@ -12,11 +12,12 @@ public class Car {
     }
 
 
-    public void moveCar(){
+    public int moveCar(){
         int randomNumber = Randoms.pickNumberInRange(RacingCarConstants.MOVE_MIN_NUMBER, RacingCarConstants.MOVE_MAX_NUMBER);
         if(randomNumber >= RacingCarConstants.MOVE_NUMBER){
             this.position++;
         }
+        return position;
     }
 
 }
