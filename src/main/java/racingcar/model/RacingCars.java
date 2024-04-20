@@ -2,6 +2,7 @@ package racingcar.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RacingCars {
 
@@ -23,7 +24,7 @@ public class RacingCars {
 
 
     public Integer getMaxdistance(){
-        int maxDistance = Integer.MIN_VALUE;
+        Integer maxDistance = Integer.MIN_VALUE;
         for (Car car : cars) {
             maxDistance = Math.max(maxDistance,car.getPosition());
         }
@@ -31,13 +32,10 @@ public class RacingCars {
     }
 
     public List<String> getWinnerNames(Integer maxDistance){
-        List<String> winners = new ArrayList<>();
-        for (Car car : cars) {
-            if(car.isWinner(maxDistance)){
-                winners.add(car.getName());
-            };
-        }
-        return winners;
+        return cars.stream()
+                .filter(car -> car.isWinner(maxDistance))
+                .map(Car::getName)
+                .collect(Collectors.toList());
     }
 
 
