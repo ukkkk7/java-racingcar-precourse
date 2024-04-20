@@ -21,7 +21,7 @@ public class CarNameValidator {
     private static void isEmpty(String[] carNames){
         for (String carName : carNames) {
             if(carName.contains(" ")){
-                throw new IllegalArgumentException("빈 값은 입력할 수 없습니다.");
+                throw new IllegalArgumentException(RacingCarConstants.EMPTY_VALUE_MESSAGE);
             }
         }
     }

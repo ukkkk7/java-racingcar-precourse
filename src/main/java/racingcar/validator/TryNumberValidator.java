@@ -12,7 +12,7 @@ public class TryNumberValidator {
 
     private static void isEmpty(String inputNumber){
         if(inputNumber.isEmpty()){
-            throw new IllegalArgumentException("빈 값은 입력할 수 없습니다.");
+            throw new IllegalArgumentException(RacingCarConstants.EMPTY_VALUE_MESSAGE);
         }
     }
 
