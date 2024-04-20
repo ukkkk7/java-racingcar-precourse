@@ -3,7 +3,6 @@ package racingcar.model;
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.constants.RacingCarConstants;
 
-import java.util.List;
 
 public class Car {
     private final String name;
@@ -14,10 +13,14 @@ public class Car {
     }
 
     public void moveCar(){
-        int randomNumber = Randoms.pickNumberInRange(RacingCarConstants.MOVE_MIN_NUMBER, RacingCarConstants.MOVE_MAX_NUMBER);
-        if(randomNumber >= RacingCarConstants.MOVE_NUMBER){
+        int movable = chargeEngine();
+        if(movable >= RacingCarConstants.MOVE_NUMBER){
             this.position++;
         }
+    }
+
+    public int chargeEngine(){
+        return Randoms.pickNumberInRange(RacingCarConstants.MOVE_MIN_NUMBER, RacingCarConstants.MOVE_MAX_NUMBER);
     }
 
     public String getName(){
