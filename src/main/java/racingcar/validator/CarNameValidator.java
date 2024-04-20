@@ -1,5 +1,7 @@
 package racingcar.validator;
 
+import racingcar.constants.RacingCarConstants;
+
 import java.util.Arrays;
 
 public class CarNameValidator {
@@ -25,13 +27,13 @@ public class CarNameValidator {
     }
     private static void isRightNameLength(String[] carNames){
         for (String carName : carNames) {
-            if(carName.length() < 1 || carName.length() > 5){
-                throw new IllegalArgumentException("이름은 글자수는 1이상 5이하여야 합니다.");
+            if(carName.length() < RacingCarConstants.MIN_CAR_NAME_LENGTH || carName.length() > RacingCarConstants.MAX_CAR_NAME_LENGTH){
+                throw new IllegalArgumentException("이름은 1이상 5이하로 입력해야 합니다.");
             }
         }
     }
     private static void isCarCountUpperTwo(String[] carNames){
-        if(carNames.length < 2){
+        if(carNames.length < RacingCarConstants.MIN_CAR_COUNT){
             throw new IllegalArgumentException("자동차는 2개이상 입력해야 합니다.");
         }
     }
