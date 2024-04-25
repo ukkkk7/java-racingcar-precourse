@@ -18,8 +18,8 @@ public class RacingGameService {
         makeCars(carNames);
 
         for (int i = 0; i < inputNumber; i++) {
-                racingCars.moveRacingCars();
-                for (Car car : racingCars.getRacingCars()) {
+            racingCars.moveRacingCars();
+            for (Car car : racingCars.getRacingCars()) {
                 OutputView.printCarName(car.getName());
                 OutputView.printCarPosition(car.getPosition());
                 OutputView.printNextLine();
@@ -30,6 +30,7 @@ public class RacingGameService {
         OutputView.printWinner(winners);
 
     }
+
 
     public void makeCars(String[] carNames){
         List<Car> cars = new ArrayList<>();

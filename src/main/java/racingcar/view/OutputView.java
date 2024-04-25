@@ -1,5 +1,7 @@
 package racingcar.view;
 
+import racingcar.constants.RacingCarConstants;
+
 import java.util.List;
 
 public class OutputView {
@@ -24,12 +26,12 @@ public class OutputView {
 
 
     public static void printWinner(List<String> winners) {
-        StringBuilder message = new StringBuilder();
+        StringBuilder message = new StringBuilder("최종 우승자 : ");
         for (String winner : winners) {
-            if(winners.size() >= 2) {
-                message.append("최종 우승자 : ").append(winner).append(", ");
+            if(winners.size() >= RacingCarConstants.MORE_THEN_ONE_WINNER) {
+                message.append(winner).append(", ");
             }
-            message.append("최종 우승자 : ").append(winner);
+            message.append(winner);
         }
         System.out.println(message);
     }
